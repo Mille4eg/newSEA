@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NewsApp.Pages.NewsDetailPage"
+    Title="News Details"
+    BackgroundColor="#EEF8FC">
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="0">
+
+            <Grid HeightRequest="220">
+
+                <Image
+                    Source="waves.jpg"
+                    Aspect="AspectFill"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill" />
+
+                <BoxView
+                    BackgroundColor="#35FFFFFF" />
+
+                <VerticalStackLayout
+                    Padding="18"
+                    Spacing="5"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Text="THE DAILY GULL"
+                        FontFamily="Georgia"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        TextColor="#153E63"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="News Details"
+                        FontFamily="Georgia"
+                        FontSize="20"
+                        FontAttributes="Italic"
+                        TextColor="#234F70"
+                        HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <VerticalStackLayout
+                Padding="18"
+                Spacing="16">
+
+                <Border
+                    Padding="0"
+                    Stroke="#C9A66B"
+                    StrokeThickness="2"
+                    BackgroundColor="#FFFFFF">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+
+                    <Image
+                        x:Name="NewsImage"
+                        HeightRequest="260"
+                        Aspect="AspectFill"
+                        HorizontalOptions="Fill" />
+
+                </Border>
+
+                <Border
+                    Padding="18"
+                    Stroke="#1F5C8A"
+                    StrokeThickness="2"
+                    BackgroundColor="#FFFFFF">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="14">
+
+                        <Label
+                            x:Name="NewsTitle"
+                            FontFamily="Georgia"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="#183B56"
+                            LineBreakMode="WordWrap" />
+
+                        <BoxView
+                            HeightRequest="2"
+                            BackgroundColor="#C9A66B" />
+
+                        <Label
+                            Text="Reported by the Gull News Network"
+                            FontFamily="Georgia"
+                            FontSize="13"
+                            FontAttributes="Italic"
+                            TextColor="#6E8799" />
+
+                        <Label
+                            x:Name="NewsContent"
+                            FontFamily="Georgia"
+                            FontSize="17"
+                            TextColor="#304B5E"
+                            LineBreakMode="WordWrap" />
+
+</VerticalStackLayout>
+
+</Border>
+
+</VerticalStackLayout>
+
+</VerticalStackLayout>
+
+</ScrollView>
+
+</ContentPage>
+    
+    <!-- Why is everything so weirdly spaced? Cause it was like midnight and it was pissing me off -->

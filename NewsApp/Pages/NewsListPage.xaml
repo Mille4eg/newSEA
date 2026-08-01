@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NewsApp.Pages.NewsListPage"
+    Title="News"
+    BackgroundColor="#EEF8FC">
+
+    <Grid RowDefinitions="220,*">
+
+<Grid Grid.Row="0">
+
+    <Image
+        Source="waves.jpg"
+        Aspect="AspectFill"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill" />
+
+    <BoxView
+        BackgroundColor="#35FFFFFF" />
+
+    <VerticalStackLayout
+        Padding="18"
+        Spacing="5"
+        VerticalOptions="Center">
+
+        <Label
+            Text="THE DAILY GULL"
+            FontFamily="Georgia"
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="#153E63"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="{Binding Title, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+            FontFamily="Georgia"
+            FontSize="20"
+            FontAttributes="Italic"
+            TextColor="#234F70"
+            HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+
+</Grid>
+
+<CollectionView
+    Grid.Row="1"
+    x:Name="CvNewsList"
+    Margin="14"
+    SelectionMode="Single"
+    SelectionChanged="CvNewsList_SelectionChanged"
+    VerticalScrollBarVisibility="Never">
+
+    <CollectionView.ItemsLayout>
+        <LinearItemsLayout
+            Orientation="Vertical"
+            ItemSpacing="14" />
+    </CollectionView.ItemsLayout>
+
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+
+            <Border
+                Padding="12"
+                Stroke="#C9A66B"
+                StrokeThickness="2"
+                BackgroundColor="#FFFFFF">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18" />
+                </Border.StrokeShape>
+
+                <Grid
+                    ColumnDefinitions="130,*"
+                    ColumnSpacing="14">
+
+                    <Border
+                        Grid.Column="0"
+                        Padding="0"
+                        Stroke="#7AA7C7"
+                        StrokeThickness="1">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12" />
+                        </Border.StrokeShape>
+
+                        <Image
+                            Source="{Binding Image}"
+                            HeightRequest="105"
+                            WidthRequest="130"
+                            Aspect="AspectFill" />
+
+                    </Border>
+
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        Spacing="7"
+                        VerticalOptions="Center">
+
+                        <Label
+                            Text="{Binding Title}"
+                            FontFamily="Georgia"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#183B56"
+                            LineBreakMode="WordWrap" />
+
+                        <Label
+                            Text="Tap to read the full report"
+                            FontFamily="Georgia"
+                            FontSize="12"
+                            FontAttributes="Italic"
+                            TextColor="#6E8799" />
+
+</VerticalStackLayout>
+
+</Grid>
+
+</Border>
+
+</DataTemplate>
+</CollectionView.ItemTemplate>
+
+</CollectionView>
+
+</Grid>
+
+</ContentPage>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="NewsApp.Pages.NewsHomePage"
+Title="Gull News Network"
+BackgroundColor="#DFF4FF">
+
+    <Grid>
+
+
+        <Image
+Source="waves.jpg"
+Aspect="AspectFill"
+HorizontalOptions="Fill"
+VerticalOptions="Fill" />
+
+
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                        EndPoint="0,1">
+
+                    <GradientStop Color="#B93B82C4"
+                    Offset="0.0" />
+
+                    <GradientStop Color="#D9D7F3FF"
+                    Offset="0.45" />
+
+                    <GradientStop Color="#F2FFFFFF"
+                    Offset="1.0" />
+
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid RowDefinitions="Auto,Auto,*"
+    Padding="18"
+    RowSpacing="12">
+
+            <!-- Newspaper time -->
+            <Border
+    Grid.Row="0"
+    Padding="16"
+    Stroke="#1F5C8A"
+    StrokeThickness="2"
+    BackgroundColor="#EFFFFFFF">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="2">
+
+                    <Label
+    Text="THE DAILY GULL"
+    FontFamily="Georgia"
+    FontSize="34"
+    FontAttributes="Bold"
+    TextColor="#153E63"
+    HorizontalOptions="Center" />
+
+                    <Label
+    Text="All the news Steven Gull allows us to print"
+    FontFamily="Georgia"
+    FontSize="14"
+    FontAttributes="Italic"
+    TextColor="#54738A"
+    HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- Categories -->
+            <CollectionView
+Grid.Row="1"
+x:Name="CvCategories"
+HeightRequest="125"
+SelectionMode="Single"
+SelectionChanged="CvCategories_SelectionChanged"
+HorizontalScrollBarVisibility="Never">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+Orientation="Horizontal"
+ItemSpacing="12" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border
+    WidthRequest="145"
+    Padding="12"
+    Stroke="#C9A66B"
+    StrokeThickness="2"
+    BackgroundColor="#EFFFFFFF">
+
+    <Border.StrokeShape>
+    <RoundRectangle CornerRadius="16" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout
+Spacing="6"
+VerticalOptions="Center">
+
+                        <Image
+    Source="{Binding ImageUrl}"
+    HeightRequest="52"
+    Aspect="AspectFit" />
+
+                        <Label
+    Text="{Binding Name}"
+    FontFamily="Georgia"
+    FontSize="18"
+    FontAttributes="Bold"
+    TextColor="#153E63"
+    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+        </Border>
+
+        </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    <!-- Breaking news section -->
+    <Grid
+    Grid.Row="2"
+    RowDefinitions="Auto,*"
+    RowSpacing="8">
+
+        <Border
+Grid.Row="0"
+Padding="10"
+Stroke="#1F5C8A"
+StrokeThickness="2"
+BackgroundColor="#EFFFFFFF">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="14" />
+    </Border.StrokeShape>
+
+    <Label
+Text="BREAKING GULL NEWS"
+FontFamily="Georgia"
+FontSize="22"
+FontAttributes="Bold"
+TextColor="#153E63"
+HorizontalOptions="Center" />
+
+        </Border>
+
+        <CollectionView
+Grid.Row="1"
+x:Name="CvNews"
+SelectionMode="None"
+VerticalScrollBarVisibility="Never">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout
+    Orientation="Vertical"
+    ItemSpacing="14" />
+    </CollectionView.ItemsLayout>
+
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+
+            <Border
+    Margin="2,4"
+    Padding="12"
+    Stroke="#7AA7C7"
+    StrokeThickness="2"
+    BackgroundColor="#F0FFFFFF">
+
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="18" />
+        </Border.StrokeShape>
+
+<Grid
+ColumnDefinitions="145,*"
+ColumnSpacing="14">
+
+<Image
+    Grid.Column="0"
+    Source="{Binding Image}"
+    HeightRequest="115"
+    WidthRequest="145"
+    Aspect="AspectFill" />
+
+<VerticalStackLayout
+    Grid.Column="1"
+    Spacing="6"
+    VerticalOptions="Center">
+
+ <Label
+        Text="{Binding Title}"
+        FontFamily="Georgia"
+        FontSize="18"
+        FontAttributes="Bold"
+        TextColor="#183B56"
+        LineBreakMode="WordWrap" />
+
+                                        <Label
+        Text="Reported by the Gull News Network"
+        FontFamily="Georgia"
+        FontSize="12"
+        FontAttributes="Italic"
+        TextColor="#6E8799" />
+
+        </VerticalStackLayout>
+
+     </Grid>
+
+    </Border>
+
+</DataTemplate>
+</CollectionView.ItemTemplate>
+
+</CollectionView>
+
+</Grid>
+
+</Grid>
+
+</Grid>
+
+</ContentPage>
